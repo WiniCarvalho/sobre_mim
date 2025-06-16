@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+body{
+    background-color: rgb(37, 38, 39);
+    color:rgb(247, 242, 242);
+    margin: 0;
+    padding: 0;
+
+}
+
+header {
+    color: rgb(247, 242, 242);
+    margin: 2rem auto; 
+    
+    font-family: "Titillium Web", serif;
+    font-size: 1.2rem;
+    font-weight: 570;
+    max-width: 80%; 
+    text-align: left; 
+}
+
+main{
+    color: rgb(247, 242, 242);
+    max-width: 600px;
+    margin-top: -8rem;
+    
+    padding: 7.65rem;
+    
+    text-align: left;
+    font-family: "Titillium Web", serif;
+    font-size: 1.3rem;
+    font-weight: 450;
+}
+
+
+
+main span {
+    color: rgb(223, 156, 11); 
+    font-weight: 450;
+}
+
+.barra{
+    box-shadow: 0px 10px 15px rgb(45, 46, 46);
+    background-color: rgb(54, 55, 56);
+    height: 2rem;
+    width: 44rem;
+    border-radius: 0.3rem;
+    
+}
+
+.intro {
+    box-shadow: 0px 10px 15px rgb(45, 46, 46);
+    background-color: rgb(54, 55, 56);
+    height: 15rem;
+    width: 58.1rem;
+    border-radius: 0.3rem;
+    padding-left: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.texto {
+    max-width: 50%;
+    flex-grow: 1; 
+    word-wrap: break-word; 
+}
+
+.apresentacao__imagem {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+#sobre-mim{
+    
+    
+    color: rgb(247, 242, 242);
+    max-width: 600px;
+    margin-top: -8rem;
+    
+    padding: 7.65rem;
+    
+    text-align: left;
+    font-family: "Titillium Web", serif;
+    font-size: 1.3rem;
+    font-weight: 450;
+}
+
+.caixa-sobre{
+    box-shadow: 0px 10px 15px rgb(45, 46, 46);
+    background-color: rgb(54, 55, 56);
+    height: 13rem;
+    width: 58.1rem;
+    margin-top: -5rem;
+    margin-left: -7.67rem;
+    margin-top: -3rem;
+    margin-bottom: -15rem;
+    
+
+    
+
+    border-radius: 0.3rem;
+    padding-left: 1rem;
+    
+}
+
+#projetos{
+    color: rgb(247, 242, 242);
+    max-width: 600px;
+    margin-top: -8rem;
+    
+    padding: 7.65rem;
+    
+    text-align: left;
+    font-family: "Titillium Web", serif;
+    font-size: 1.3rem;
+    font-weight: 450;
+}
+
+.caixa-projetos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  height: auto;
+  width: 58.1rem;
+  background-color: rgb(54, 55, 56);
+  border-radius: 0.3rem;
+  box-shadow: 0px 10px 15px rgb(45, 46, 46);
+}
+.titulo-projetos {
+  grid-column: span 3;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: rgb(247, 242, 242);
+  font-weight: 700;
+}
+
+
+.projeto-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(65, 66, 67);
+  color: rgb(247, 242, 242);
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.projeto-link:hover {
+  background-color: rgb(223, 156, 11);
+  color: rgb(37, 38, 39);
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    justify-content: end;
+    width: 195px;
+    border-radius: 8px;
+    padding-left: 270px;
+    
+    
+    
+}
+.redes {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+  text-align: center;
+    color: rgb(247, 242, 242);
+    max-width: 600px;
+    margin-top: -30rem;
+    margin-left: 10rem;
+    padding: 7.65rem;
+    text-align: center;
+    font-family: "Titillium Web", serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.redes > div {
+    display: block; 
+    margin-top: 1rem; 
+}
+
+.github-container,
+.linkedin-container,
+.e-mail-container {
+    border: 2px solid rgb(223, 156, 11);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+.github-container i,
+.linkedin-container i,
+.e-mail-container i {
+    font-size: 1.5rem;
+} 
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header,
+  main,
+  #sobre-mim,
+  #projetos,
+  .redes {
+    padding: 2rem 1rem;
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  .intro,
+  .caixa-projetos {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+  .caixa-sobre{
+    flex-direction: column;
+    margin-left: -1rem;
+    width: 100%;
+    height: 23rem;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: -2rem;
+  }
+
+  .texto,
+  .apresentacao__imagem {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .apresentacao__imagem {
+    margin-top: 1rem;
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr; /* 1 por linha */
+    gap: 1rem;
+  }
+
+  img {
+    padding-left: 0;
+    width: 50%;
+    height: auto;
+  }
+
+  .redes{
+    margin-top: -17rem;
+    margin-left: 1rem;
+  }
+  .redes > div {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .github-container,
+  .linkedin-container,
+  .e-mail-container {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
