@@ -222,8 +222,7 @@ img {
     max-width: 100%;
   }
 
-  .intro,
-  .caixa-projetos {
+  .intro {
     flex-direction: column;
     width: 100%;
     height: auto;
@@ -234,12 +233,18 @@ img {
     flex-direction: column;
     margin-left: -1rem;
     width: 100%;
-    height: 30rem;
+    height: 33rem;
     padding: 1rem;
     text-align: center;
     margin-bottom: -2rem;
   }
-
+.caixa-projetos{
+  flex-direction: column;
+    width: 110%;
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+}
   .texto,
   .apresentacao__imagem {
     width: 100%;
