@@ -260,15 +260,16 @@ img {
     flex-direction: column;
     margin-left: -1rem;
     width: 100%;
-    height: 30rem;
+    height: 35rem;
     padding: 1rem;
     text-align: center;
     margin-bottom: -2rem;
   }
   .caixa-projetos {
-    width: 100%;
+    width: 94%;
     margin: 0;
     padding: 1.5rem 1rem;
+    
   }
 
   .caixa-projetos {
@@ -297,5 +298,6 @@ img {
     margin: 0.5rem auto;
   }
 }
+
 
 
