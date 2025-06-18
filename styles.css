@@ -121,7 +121,7 @@ main span {
 
 .caixa-projetos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   padding: 2rem;
   height: auto;
@@ -131,7 +131,7 @@ main span {
   box-shadow: 0px 10px 15px rgb(45, 46, 46);
 }
 .titulo-projetos {
-  grid-column: span 3;
+  grid-column: span 2;
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -179,7 +179,7 @@ img {
   text-align: center;
     color: rgb(247, 242, 242);
     max-width: 600px;
-    margin-top: -30rem;
+    margin-top: -25rem;
     margin-left: 10rem;
     padding: 7.65rem;
     text-align: center;
@@ -273,7 +273,7 @@ img {
   }
 
   .caixa-projetos {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
   }
 
