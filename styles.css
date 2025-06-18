@@ -196,6 +196,8 @@ img {
     text-align: center;
   }
 
+  
+
   .barra {
     width: 100%;
     height: auto;
@@ -254,7 +256,7 @@ img {
   .caixa-projetos {
     width: 95%;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem;
     margin: 2rem auto;
     box-sizing: border-box;
@@ -291,4 +293,3 @@ img {
     margin-bottom: 0.5rem;
   }
 }
-
