@@ -254,7 +254,7 @@ img {
   .caixa-projetos {
     width: 95%;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2rem;
     padding: 1rem;
     margin: 2rem auto;
     box-sizing: border-box;
