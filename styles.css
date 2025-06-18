@@ -1,172 +1,179 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
-body{
-    background-color: rgb(37, 38, 39);
-    color:rgb(247, 242, 242);
-    margin: 0;
-    padding: 0;
 
+:root {
+  --bg-color: #252627;
+  --text-color: #f7f2f2;
+  --highlight-color: #df9c0b;
+  --header-bg: #363738;
+  --link-bg: #414243;
+  --shadow-color: rgba(45, 46, 46, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 header {
-    color: rgb(247, 242, 242);
-    margin: 2rem auto; 
-    
-    font-family: "Titillium Web", serif;
-    font-size: 1.2rem;
-    font-weight: 570;
-    max-width: 80%; 
-    text-align: left; 
-}
-
-main{
-    color: rgb(247, 242, 242);
-    max-width: 600px;
-    margin-top: -8rem;
-    
-    padding: 7.65rem;
-    
-    text-align: left;
-    font-family: "Titillium Web", serif;
-    font-size: 1.3rem;
-    font-weight: 450;
+  background-color: var(--header-bg);
+  box-shadow: 0 10px 15px var(--shadow-color);
+  border-radius: 0.3rem;
+  margin: 2rem 0;
+  margin-bottom: 5rem;
 }
 
 
-
-main span {
-    color: rgb(223, 156, 11); 
-    font-weight: 450;
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  list-style: none;
+  padding: 0.75rem 0;
+  margin: 0;
 }
 
-.barra{
-    box-shadow: 0px 10px 15px rgb(45, 46, 46);
-    background-color: rgb(54, 55, 56);
-    height: 2rem;
-    width: 44rem;
-    border-radius: 0.3rem;
-    
+.nav-list a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--highlight-color);
+  outline: none;
+}
+
+main {
+  text-align: left;
 }
 
 .intro {
-    box-shadow: 0px 10px 15px rgb(45, 46, 46);
-    background-color: rgb(54, 55, 56);
-    height: 15rem;
-    width: 58.1rem;
-    border-radius: 0.3rem;
-    padding-left: 1rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 3rem;
+  background-color: var(--header-bg);
+  box-shadow: 0 10px 15px var(--shadow-color);
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 5rem;
+  
 }
 
-.texto {
-    max-width: 50%;
-    flex-grow: 1; 
-    word-wrap: break-word; 
+.intro-text {
+  flex: 1 1 50%;
+  font-size: 1.3rem;
+  text-align: justify;
 }
 
-.apresentacao__imagem {
-    width: 40%;
-    height: auto;
-    object-fit: cover;
+.intro-text span {
+  color: var(--highlight-color);
+  font-weight: 600;
 }
 
-#sobre-mim{
-    
-    
-    color: rgb(247, 242, 242);
-    max-width: 600px;
-    margin-top: -8rem;
-    
-    padding: 7.65rem;
-    
-    text-align: left;
-    font-family: "Titillium Web", serif;
-    font-size: 1.3rem;
-    font-weight: 450;
+.intro-image {
+  width: 28%;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-.caixa-sobre{
-    box-shadow: 0px 10px 15px rgb(45, 46, 46);
-    background-color: rgb(54, 55, 56);
-    height: 13rem;
-    width: 58.1rem;
-    margin-top: -5rem;
-    margin-left: -7.67rem;
-    margin-top: -3rem;
-    margin-bottom: -15rem;
-    
-
-    
-
-    border-radius: 0.3rem;
-    padding-left: 1rem;
-    
+.sobre {
+  background-color: var(--header-bg);
+  box-shadow: 0 10px 15px var(--shadow-color);
+  border-radius: 0.3rem;
+  padding: 2rem;
+  margin-bottom: 5rem;
 }
 
-.caixa-projetos {
-  padding: 4rem 2rem;
+.sobre h1 {
   text-align: center;
-}
-
-.titulo-projetos {
-  grid-column: span 3;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: rgb(247, 242, 242);
+  margin-bottom: 1rem;
   font-weight: 700;
 }
 
+.sobre p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.projetos {
+  background-color: var(--header-bg);
+  box-shadow: 0 10px 15px var(--shadow-color);
+  border-radius: 0.3rem;
+  padding: 2rem;
+  margin-bottom: -5rem;
+}
+
+.projetos h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.projetos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 .projeto-link {
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: rgb(65, 66, 67);
-  color: rgb(247, 242, 242);
+  align-items: center;
+  background-color: var(--link-bg);
+  color: var(--text-color);
   text-decoration: none;
   padding: 1rem;
   border-radius: 0.5rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
   text-align: center;
 }
 
-.projeto-link:hover {
-  background-color: rgb(223, 156, 11);
-  color: rgb(37, 38, 39);
+.projeto-link:hover,
+.projeto-link:focus {
+  background-color: var(--highlight-color);
+  color: var(--bg-color);
+  outline: none;
 }
 
-img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-    justify-content: end;
-    width: 195px;
-    border-radius: 8px;
-    padding-left: 270px;
-    
-    
-    
-}
 .redes {
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 1rem;
+  padding: 7.65rem 1rem;
   text-align: center;
-    color: rgb(247, 242, 242);
-    max-width: 600px;
-    margin-top: -30rem;
-    margin-left: 10rem;
-    padding: 7.65rem;
-    text-align: center;
-    font-family: "Titillium Web", serif;
-    font-size: 1.3rem;
-    font-weight: bold;
+  color: rgb(247, 242, 242);
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: "Titillium Web", serif;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .redes > div {
@@ -180,6 +187,7 @@ img {
     border: 2px solid rgb(223, 156, 11);
     border-radius: 8px;
     padding: 0.5rem 1rem;
+    
 }
 
 .github-container i,
@@ -189,107 +197,28 @@ img {
 } 
 
 @media (max-width: 768px) {
-  header {
-    margin: 1rem auto;
-    font-size: 1.1rem;
-    max-width: 90%;
-    text-align: center;
-  }
-
-  
-
-  .barra {
-    width: 100%;
-    height: auto;
-    display: inline;
-     list-style-type: none;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
-
-
-  main,
-  #sobre-mim,
-  #projetos {
-    padding: 2rem 1rem;
-    margin: 2rem auto;
-    max-width: 95%;
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
   .intro {
     flex-direction: column;
-    width: 95%;
-    height: auto;
-    padding: 1rem;
-    gap: 1rem;
-    margin: 2rem auto;
-    box-sizing: border-box;
-  }
-
-  .texto {
-    max-width: 100%;
     text-align: center;
   }
 
-  .apresentacao__imagem {
-    width: 80%;
-    height: auto;
-    padding: 0;
+  .intro-image {
+    width: 60%;
+    margin-top: 1rem;
   }
 
-  .caixa-sobre {
-    width: 95%;
-    height: auto;
-    padding: 1rem;
-    margin: 2rem auto;
-    box-sizing: border-box;
-  }
-
-  .caixa-projetos {
-    width: 95%;
+  .projetos-lista {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1rem;
-    margin: 2rem auto;
-    box-sizing: border-box;
   }
 
-  .titulo-projetos {
-    grid-column: span 1;
-    font-size: 1.5rem;
+  .nav-list {
+    flex-direction: row;
+    gap: 1.5rem;
   }
 
-  .projeto-link {
-    padding: 0.8rem;
-    font-size: 1rem;
-  }
-
-  img {
-    width: 70%;
-    padding-left: 0;
-  }
-
-  .redes {
-    margin: 2rem auto;
-    padding: 2rem 1rem;
-    max-width: 95%;
-    text-align: center;
-    font-size: 1.1rem;
-  }
-
-  .github-container,
-  .linkedin-container,
-  .e-mail-container {
+  .rede-link,
+  .email-contato {
     width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 0.5rem;
+    justify-content: center;
   }
 }
