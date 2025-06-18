@@ -84,10 +84,6 @@ main {
   text-align: justify;
 }
 
-.intro-text span {
-  color: var(--highlight-color);
-  font-weight: 600;
-}
 
 .intro-image {
   width: 28%;
@@ -194,7 +190,16 @@ main {
 .linkedin-container i,
 .e-mail-container i {
     font-size: 1.5rem;
+    margin-right: 0.7rem;
 } 
+
+.github-container a,
+.linkedin-container a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+
 
 @media (max-width: 768px) {
   .intro {
