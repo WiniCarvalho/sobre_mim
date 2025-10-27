@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
-
-
 :root {
-  --bg-color: #252627;
-  --text-color: #f7f2f2;
-  --highlight-color: #df9c0b;
-  --header-bg: #363738;
-  --link-bg: #414243;
-  --shadow-color: rgba(45, 46, 46, 0.8);
+  --bg-color: #0a0e2f;
+  --text-color: #f1f1f1;
+  --highlight-color: #ff1801;
+  --header-bg: #1b213b;
+  --link-bg: #2e3557;
+  --shadow-color: rgba(10, 14, 47, 0.7);
 }
 
 * {
@@ -17,7 +14,7 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -31,13 +28,28 @@ body {
 }
 
 header {
-  background-color: var(--header-bg);
-  box-shadow: 0 10px 15px var(--shadow-color);
-  border-radius: 0.3rem;
-  margin: 2rem 0;
-  margin-bottom: 5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--header-bg); 
+  padding: 1rem 2rem;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+body, main, .container {
+  padding-top: 80px; /* ajuste conforme altura do header */
+}
 
 .nav-list {
   display: flex;
@@ -66,6 +78,7 @@ main {
   text-align: left;
 }
 
+/* ===== Introdução ===== */
 .intro {
   background-color: var(--header-bg);
   box-shadow: 0 10px 15px var(--shadow-color);
@@ -75,7 +88,7 @@ main {
   gap: 1.5rem;
   padding: 2rem;
   margin-bottom: 5rem;
-  
+  margin-top: -3rem;
 }
 
 .intro-text {
@@ -84,13 +97,14 @@ main {
   text-align: justify;
 }
 
-
 .intro-image {
-  width: 28%;
-  border-radius: 8px;
+  width: 19%;
+  border-radius: 45%;
   object-fit: cover;
+  border: 3px solid var(--shadow-color);
 }
 
+/* ===== Sobre mim ===== */
 .sobre {
   background-color: var(--header-bg);
   box-shadow: 0 10px 15px var(--shadow-color);
@@ -112,6 +126,7 @@ main {
   text-align: justify;
 }
 
+/* ===== Projetos ===== */
 .projetos {
   background-color: var(--header-bg);
   box-shadow: 0 10px 15px var(--shadow-color);
@@ -137,26 +152,49 @@ main {
 }
 
 .projeto-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--link-bg);
-  color: var(--text-color);
-  text-decoration: none;
-  padding: 1rem;
+  display: block;
+  position: relative;
   border-radius: 0.5rem;
-  font-weight: 700;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 150px;
+}
+
+/* Imagem dentro do link */
+.projeto-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Nome do projeto sobreposto */
+.projeto-nome {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
+  background-color: rgba(10, 14, 47, 0.7);
+  font-weight: 700;
+  padding: 0.5rem 0;
+  transition: background-color 0.3s ease;
 }
 
-.projeto-link:hover,
-.projeto-link:focus {
+/* Hover: zoom e escurecer nome */
+.projeto-link:hover img {
+  transform: scale(1.05);
+}
+
+.projeto-link:hover .projeto-nome {
   background-color: var(--highlight-color);
-  color: var(--bg-color);
-  outline: none;
 }
 
+
+
+/* ===== Redes sociais ===== */ 
 .redes {
   display: flex;
   flex-direction: column;
@@ -173,24 +211,23 @@ main {
 }
 
 .redes > div {
-    display: block; 
-    margin-top: 1rem; 
+  display: block; 
+  margin-top: 1rem; 
 }
 
 .github-container,
 .linkedin-container,
 .e-mail-container {
-    border: 2px solid rgb(223, 156, 11);
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    
+  border: 2px solid #ff1801;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
 }
 
 .github-container i,
 .linkedin-container i,
 .e-mail-container i {
-    font-size: 1.5rem;
-    margin-right: 0.7rem;
+  font-size: 1.5rem;
+  margin-right: 0.7rem;
 } 
 
 .github-container a,
@@ -199,8 +236,7 @@ main {
   color: inherit; 
 }
 
-
-
+/* ===== Responsividade ===== */
 @media (max-width: 768px) {
   .intro {
     flex-direction: column;
@@ -226,4 +262,19 @@ main {
     width: 100%;
     justify-content: center;
   }
+}
+
+
+/* SCROLLBAR */
+html::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: var(--header-bg);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--highlight-color);
+  border-radius: 2rem;
 }
