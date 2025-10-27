@@ -1,11 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
 
-body {
-    background-color: rgb(37, 38, 39);
-    color: rgb(247, 242, 242);
-    font-family: 'Titillium Web', sans-serif;
+
+:root {
+    --bg-color: #0a0e2f;        /* Fundo geral */
+    --text-color: #f1f1f1;      /* Texto */
+    --primary-color: #ff1801;   /* Destaques */
+    --card-bg: #1b213b;         /* Fundo das caixas */
+    --link-bg: #2e3557;         /* Fundo links / botões */
+    --shadow-color: rgba(10, 14, 47, 0.7);
+    --border-radius: 0.3rem;
+}
+
+/* Reset geral */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Titillium Web', sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* Header */
@@ -20,19 +37,19 @@ body {
 .botao-home {
     display: inline-block;
     padding: 0.5rem 1.5rem;
-    background-color: rgb(54, 55, 56);
-    color: rgb(223, 156, 11);
+    background-color: var(--card-bg);
+    color: var(--primary-color);
     text-decoration: none;
-    border: 2px solid rgb(223, 156, 11);
-    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
     transition: background-color 0.3s, color 0.3s;
     font-weight: bold;
     font-size: 1.1rem;
 }
 
 .botao-home:hover {
-    background-color: rgb(223, 156, 11);
-    color: rgb(37, 38, 39);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
 }
 
 /* Seção Currículo */
@@ -40,27 +57,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+    padding: 4rem 1rem;
 }
 
 .caixa-curriculo {
-    box-shadow: 0px 10px 15px rgb(45, 46, 46);
-    background-color: rgb(54, 55, 56);
-    width: 58.1rem;
-    border-radius: 0.3rem;
+    box-shadow: 0px 10px 15px var(--shadow-color);
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 58rem;
+    border-radius: var(--border-radius);
     padding: 2rem;
 }
 
 .caixa-curriculo h1 {
     font-size: 2rem;
-    color: rgb(223, 156, 11);
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
 .caixa-curriculo h2 {
     font-size: 1.5rem;
-    color: rgb(223, 156, 11);
+    color: var(--secondary-color);
     margin-top: 1.5rem;
 }
 
@@ -79,11 +97,11 @@ body {
 
 /* Dados Pessoais */
 .dados-pessoais {
-    background-color: rgb(45, 46, 46);
+    background-color: #0a0e2f;
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 5px 10px rgb(30, 30, 30);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
 }
 
 .dados-pessoais p {
