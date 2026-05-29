@@ -521,6 +521,9 @@ html::-webkit-scrollbar-thumb {
   .projetos-lista {
     grid-template-columns: 1fr;
   }
+  html::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  }
 
   .github-container,
   .linkedin-container,
