@@ -312,79 +312,134 @@ main {
   padding: 0;
   margin: 0;
 }
+.projeto-card {
 
-.projeto-link {
-  position: relative;
-
-  display: block;
-
-  height: 220px;
+  display: flex;
+  flex-direction: column;
 
   overflow: hidden;
 
   text-decoration: none;
 
-  border-radius: 1rem;
+  background: rgba(255,255,255,.03);
 
   border: 1px solid rgba(0,210,190,.12);
 
+  border-radius: 1.2rem;
+
   transition: var(--transition);
 
-  background: #111827;
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.25);
+
 }
 
-.projeto-link img {
+.projeto-card:hover {
+
+  transform: translateY(-10px);
+
+  border-color: rgba(0,210,190,.35);
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,.4),
+  0 0 20px rgba(0,210,190,.08);
+
+}
+
+.projeto-card img {
+
   width: 100%;
-  height: 100%;
+  height: 180px;
 
   object-fit: cover;
 
   transition: transform .5s ease;
+
 }
 
-.projeto-link:hover img {
-  transform: scale(1.08);
+.projeto-card:hover img {
+
+  transform: scale(1.05);
+
 }
 
-.projeto-link:hover {
-  transform: translateY(-8px);
+.projeto-info {
 
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.45),
-    0 0 20px rgba(0,210,190,.08);
+  padding: 1.2rem;
+
 }
 
-.projeto-nome {
-  position: absolute;
-
-  bottom: 0;
-
-  width: 100%;
-
-  padding: 1rem;
-
-  text-align: center;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(11,15,20,.95),
-      rgba(11,15,20,.2)
-    );
+.projeto-info h3 {
 
   color: var(--text-color);
 
+  margin-bottom: .8rem;
+
+  font-size: 1.2rem;
+
+}
+
+.projeto-info p {
+
+  color: var(--muted-text);
+
+  font-size: .95rem;
+
+  line-height: 1.6;
+
+  min-height: 80px;
+
+}
+
+.projeto-tags {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: .5rem;
+
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+
+}
+
+.projeto-tags span {
+
+  padding: .35rem .8rem;
+
+  border-radius: 999px;
+
+  font-size: .8rem;
+
+  font-weight: 500;
+
+  color: var(--accent-color);
+
+  border:
+  1px solid rgba(0,210,190,.15);
+
+  background:
+  rgba(0,210,190,.08);
+
+}
+
+.projeto-btn {
+
+  display: inline-block;
+
+  color: var(--accent-color);
+
   font-weight: 600;
 
-  letter-spacing: .5px;
-
   transition: var(--transition);
+
 }
 
-.projeto-link:hover .projeto-nome {
-  color: var(--accent-color);
-}
+.projeto-card:hover .projeto-btn {
 
+  transform: translateX(5px);
+
+}
 /* ================= REDES ================= */
 
 .redes {
@@ -517,15 +572,269 @@ html::-webkit-scrollbar-thumb {
   .projetos {
     padding: 2rem;
   }
+  html::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  }
 
   .projetos-lista {
     grid-template-columns: 1fr;
   }
 
-
   .github-container,
   .linkedin-container,
   .e-mail-container {
     width: 100%;
+  }
+}
+
+/* =========================================
+    SECTION UPGRADE
+========================================= */
+
+.intro-text h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  padding: 0.9rem 1.6rem;
+  border-radius: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: #0b0f14;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 25px rgba(0,210,190,.25);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(0,210,190,.25);
+  color: var(--text-color);
+  background: rgba(255,255,255,.02);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-color);
+
+  color: var(--accent-color);
+
+  transform: translateY(-3px);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat strong {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+}
+
+.stat span {
+  color: var(--muted-text);
+  font-size: .9rem;
+}
+
+/* =========================================
+   TITULOS 
+========================================= */
+
+h1,
+h2,
+h3 {
+  letter-spacing: -1px;
+}
+
+.sobre h1,
+.projetos h2 {
+  position: relative;
+}
+
+.sobre h1::after,
+.projetos h2::after {
+  content: "";
+
+  display: block;
+
+  width: 70px;
+  height: 3px;
+
+  margin: .8rem auto 0;
+
+  background: var(--accent-color);
+
+  border-radius: 999px;
+}
+
+/* =========================================
+   PROJETOS MAIS IMPACTANTES
+========================================= */
+
+.projeto-link {
+  height: 260px;
+}
+
+.projeto-link::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,.5),
+    transparent
+  );
+
+  opacity: 0;
+
+  transition: var(--transition);
+
+  z-index: 1;
+}
+
+.projeto-link:hover::before {
+  opacity: 1;
+}
+
+.projeto-nome {
+  z-index: 2;
+}
+
+/* =========================================
+   REDES SOCIAIS
+========================================= */
+
+.redes h3 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+.github-container,
+.linkedin-container,
+.e-mail-container {
+  max-width: 500px;
+}
+
+.github-container:hover i,
+.linkedin-container:hover i,
+.e-mail-container:hover i {
+  transform: scale(1.1);
+}
+
+.github-container i,
+.linkedin-container i,
+.e-mail-container i {
+  transition: var(--transition);
+}
+
+/* =========================================
+   GRID DE FUNDO
+========================================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.015) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.015) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =========================================
+   GLOW MAIS FORTE
+========================================= */
+
+.intro,
+.sobre,
+.projetos {
+  position: relative;
+}
+
+.intro::after,
+.sobre::after,
+.projetos::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(0,210,190,.08),
+      transparent 40%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .stat {
+    align-items: center;
   }
 }
