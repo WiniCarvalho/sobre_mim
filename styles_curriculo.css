@@ -1,109 +1,299 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-color: #0a0e2f;        /* Fundo geral */
-    --text-color: #f1f1f1;      /* Texto */
-    --primary-color: #ff1801;   /* Destaques */
-    --card-bg: #1b213b;         /* Fundo das caixas */
-    --link-bg: #2e3557;         /* Fundo links / botões */
-    --shadow-color: rgba(10, 14, 47, 0.7);
-    --border-radius: 0.3rem;
+    --bg-color: #0b0f14;
+    --card-bg: #111827;
+
+    --text-color: #f5f7fa;
+    --muted-text: #9ca3af;
+
+    --primary-color: #00d2be;
+    --primary-hover: #00f5d4;
+
+    --border-color: rgba(255,255,255,0.06);
+
+    --shadow-color: rgba(0,0,0,0.45);
+
+    --border-radius: 1.25rem;
+
+    --transition: all .35s ease;
 }
 
-/* Reset geral */
+/* ================= RESET ================= */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Titillium Web', sans-serif;
+html {
     scroll-behavior: smooth;
 }
 
-/* Header */
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(0,210,190,.08),
+            transparent 30%),
+        radial-gradient(circle at bottom left,
+            rgba(0,210,190,.05),
+            transparent 30%),
+        var(--bg-color);
+
+    color: var(--text-color);
+
+    font-family: 'Inter', sans-serif;
+
+    line-height: 1.7;
+}
+
+/* ================= HEADER ================= */
+
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+
+    padding: 2rem 1rem;
 }
 
-/* Botão Home */
+/* ================= BOTÃO HOME ================= */
+
 .botao-home {
     display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background-color: var(--card-bg);
-    color: var(--primary-color);
+
+    padding: .9rem 1.8rem;
+
     text-decoration: none;
-    border: 2px solid var(--primary-color);
-    border-radius: var(--border-radius);
-    transition: background-color 0.3s, color 0.3s;
-    font-weight: bold;
-    font-size: 1.1rem;
+
+    color: var(--text-color);
+
+    background: rgba(255,255,255,.03);
+
+    border: 1px solid rgba(0,210,190,.25);
+
+    border-radius: 999px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: var(--transition);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    letter-spacing: .5px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
 }
 
 .botao-home:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-color);
+    transform: translateY(-3px);
+
+    color: var(--primary-color);
+
+    border-color: rgba(0,210,190,.45);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.35),
+        0 0 15px rgba(0,210,190,.08);
 }
 
-/* Seção Currículo */
+/* ================= CURRÍCULO ================= */
+
 #curriculo {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 1rem;
+
+    padding: 2rem 1rem 4rem;
 }
 
 .caixa-curriculo {
-    box-shadow: 0px 10px 15px var(--shadow-color);
-    background-color: var(--card-bg);
     width: 100%;
-    max-width: 58rem;
-    border-radius: var(--border-radius);
-    padding: 2rem;
+    max-width: 900px;
+
+    padding: 3rem;
+
+    border-radius: 1.5rem;
+
+    background: rgba(255,255,255,.03);
+
+    border: 1px solid var(--border-color);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4),
+        0 0 20px rgba(0,210,190,.04);
+
+    transition: var(--transition);
 }
+
+.caixa-curriculo:hover {
+    transform: translateY(-4px);
+}
+
+/* ================= TÍTULO PRINCIPAL ================= */
 
 .caixa-curriculo h1 {
-    font-size: 2rem;
-    color: var(--primary-color);
     text-align: center;
-    margin-bottom: 1.5rem;
+
+    font-size: 2.8rem;
+
+    font-weight: 700;
+
+    color: var(--primary-color);
+
+    margin-bottom: 2rem;
+
+    letter-spacing: 1px;
 }
 
+/* ================= SUBTÍTULOS ================= */
+
 .caixa-curriculo h2 {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    margin-top: 1.5rem;
+    position: relative;
+
+    font-size: 1.4rem;
+
+    color: var(--primary-color);
+
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    padding-bottom: .6rem;
 }
+
+.caixa-curriculo h2::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 60px;
+    height: 2px;
+
+    border-radius: 2rem;
+
+    background: var(--primary-color);
+}
+
+/* ================= TEXTO ================= */
+
+.caixa-curriculo p {
+    color: var(--text-color);
+
+    margin-bottom: .8rem;
+
+    text-align: justify;
+}
+
+.caixa-curriculo strong {
+    color: var(--primary-color);
+}
+
+/* ================= LISTAS ================= */
 
 .caixa-curriculo ul {
     padding-left: 1.5rem;
 }
 
 .caixa-curriculo li {
-    margin-bottom: 0.5rem;
-    list-style-type: square;
+    margin-bottom: .75rem;
+
+    color: var(--text-color);
 }
 
-.caixa-curriculo p {
-    line-height: 1.6;
+.caixa-curriculo li::marker {
+    color: var(--primary-color);
 }
 
-/* Dados Pessoais */
+/* ================= DADOS PESSOAIS ================= */
+
 .dados-pessoais {
-    background-color: #0a0e2f;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    background: rgba(0,210,190,.05);
+
+    border-left: 4px solid var(--primary-color);
+
+    border-radius: 1rem;
+
+    padding: 1.5rem;
+
+    margin-bottom: 2rem;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.2);
 }
 
 .dados-pessoais p {
-    margin: 0.3rem 0;
+    margin-bottom: .5rem;
 }
+
+.dados-pessoais p:last-child {
+    margin-bottom: 0;
+}
+
+/* ================= LINKS ================= */
+
+a {
+    color: var(--primary-color);
+
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 1.5rem 1rem;
+    }
+
+    .caixa-curriculo {
+        padding: 2rem;
+    }
+
+    .caixa-curriculo h1 {
+        font-size: 2rem;
+    }
+
+    .caixa-curriculo h2 {
+        font-size: 1.2rem;
+    }
+
+    .botao-home {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .caixa-curriculo {
+        padding: 1.5rem;
+    }
+
+    .caixa-curriculo h1 {
+        font-size: 1.8rem;
+    }
+
+    .dados-pessoais {
+        padding: 1rem;
+    }
+}
+
